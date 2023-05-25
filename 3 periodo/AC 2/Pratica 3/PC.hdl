@@ -1,0 +1,29 @@
+// Coloque o seu nome aqui:
+
+/**
+ * Um contador de 16 bits com bits de controle load e reset.
+ * if      (reset[t] == 1) out[t+1] = 0
+ * else if (load[t] == 1)  out[t+1] = in[t]
+ * else if (inc[t] == 1)   out[t+1] = out[t] + 1  (adição inteira)
+ * else                    out[t+1] = out[t]
+ */
+
+CHIP PC {
+    IN in[16],load,inc,reset;
+    OUT out[16];
+
+    PARTS:
+    // Coloque o seu código aqui:
+    // verifica se e pra incrementar
+    Inc16 (in = inicio, out = inc1);
+    Mux16 (a = inicio, b = inc1, sel = inc, out = out1);
+
+    // verifica o load
+    Mux16 (a = out1, b = in, sel = load, out = out2);
+
+    // verifica se e pra resetar
+    Mux16 (a = out2, b = false, sel = reset, out = out3);
+
+    //registrador
+    Register(in = out3, load = true, out = out, out = inicio);
+}

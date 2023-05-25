@@ -1,0 +1,124 @@
+Atividade Prática
+
+Problema 1
+
+Copie o código abaixo cole-o num editor de texto/codigo
+salve com a extensão .s
+carregue esse código no simulador
+execute passo a passo e observe os valores dos registradores.
+
+main:
+  addi t0, zero, 1        # t0 = 0 + 1
+  addi t1, zero, 2        # t1 = 0 + 2
+  add  t2, t1, t0         # t2 = t1 + t0
+  ret
+
+
+Problema 2
+
+Altere o código acima para que ele utilize valores de imediatos diferentes.
+Explore valores que são maiores que o permitido e veja qual é o resultado.
+Note a diferença entre o valor do seu código e o valor mostrado, com campo
+da instrução, no bloco inferior direito da tela (logo abaixo de imm).
+
+
+Problema 3
+
+Como é esperado, seu programa não precisa utilizar apenas os imediatos
+codificados nas instruções, você também pode utilizar valores que serão
+fornecidos pelo usuário. Para isso, é necessário utilizar uma sequência de
+instruções que faz a leitura do teclado. A sequência de duas instruções abaixo
+faz com que apareça uma janela para leitura de um número inteiro e ele seja
+guardado no registrador a0.
+
+addi t0, zero, 4   # escolhe a operacao de leitura de inteiro (4)
+ecall              # efetua a operacao de leitura de inteiro
+
+Altere o código para que ele comece com uma leitura de um número inteiro
+e some o valor 2 nesse número.
+
+
+Problema 4
+
+Escrever um número na saída envolve uma sequência de passos
+similar à de leitura de um número inteiro. Você pode utilizar a sequência
+de duas instruções abaixo para escrever um número inteiro na saída.
+Esse valor deve estar previamente armazenado no registrador a0.
+
+addi t0, zero, 1   # escolhe a operacao de escrita de inteiro (1)
+ecall              # efetua a operacao de escrita de inteiro
+
+Escreva um código para ler um numero inteiro, somar 4 e escrever o
+valor da soma na saída.
+
+
+Problema 5
+
+Faça o seu programa ler dois números e escrever a soma deles na tela.
+
+
+Problema 6
+
+
+A instrução j serve para fazer um salto para uma determinada posição de
+memória. Nesse caso, a posição está especificada através do label main.
+um label é um nome que você dá a uma posição de memória. Ele é utilizado
+para facilitar a leitura do código e para facilitar a manutenção do código.
+
+Toda vez que seu programa chega na instrução j main ele volta para main e
+recomeça a execução (loop infinito).
+
+Complete as instruções no código a seguir para que seu programa cumpra exatamente
+o que está dito no comentário. Você deve usar a instrução j para fazer o loop infinito.
+
+main:
+  # Le um numero do teclado e armazena em a0
+
+
+  # Soma 2 ao valor de a0
+
+
+  # Imprima o valor de a0 na tela
+
+
+  # Va novamente para o main e recomece a execucao
+  j main
+  ret
+
+
+Problema 7
+
+Faz todo sentido querer executar uma tarefa apenas um número finito de vezes.
+Para isso, você tanto pode definir um número fixo fazendo um laço ao estilo
+for ou pode definir uma condição fazendo um laço ao estilo while.
+
+Vamos começar com o while. Vamos alterar o código para que ele continue
+executando enquanto o número digitado for diferente de 0 (zero). Para isso,
+é importante que você também salve o número digitado em outro registrador
+ao invés de mante-lo apenas no a0 que será atualizado logo em seguida.
+
+O RISC-V tem instruções de salto condicional, dentre elas, o beq que
+significa branch if equal (salta se dois valores forem iguais) e o bne que
+significa branch if not equal (salta se dois valores forem diferentes).
+Supondo que seu código guardou o valor lido no registrador s0 também, o final
+do código modificado fica:
+
+  # Se o valor lido for diferente de zero, va para o inicio
+  bne s0, zero, main
+  ret
+
+Altere seu programa para executar enquanto o número digitado for diferente
+de zero. Você deve usar a instrução beq para fazer o loop.
+
+
+Problema 8
+
+Ficou meio estranho calcular a soma com 2 para o valor 0 que é o valor
+utilizado para sair do programa. Altere seu programa para não imprimir o
+resultado da soma com 2 se o número digitado for zero. 
+
+
+Problema 9
+
+Altere seu programa para que ele execute exatamente 10 vezes.
+Você pode usar a instrução bge para fazer o loop.

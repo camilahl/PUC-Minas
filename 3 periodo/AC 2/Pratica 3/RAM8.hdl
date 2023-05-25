@@ -1,0 +1,27 @@
+// Coloque o seu nome aqui:
+
+/**
+ * Memória de 8 registradores, cada um com 16 bits de largura.
+ * A saída out reflete o valor armazenado no endereço de memória
+ * especificado em adress. If load  ==1, then o valor in é armazenado (loaded)
+ * no endereço de memória especificado em adress (o valor carregado será
+ * refletido na saída out a partir do próximo passo de tempo em diante).
+ */
+
+CHIP RAM8 {
+    IN in[16], load, address[3];
+    OUT out[16];
+
+    PARTS:
+    // Coloque o seu código aqui:
+    DMux8Way (in = load, sel = address, a = load1, b = load2, c = load3, d = load4, e = load5, f = load6, g = load7, h = load8);
+    Register (in = in, load = load1, out = out1);
+    Register (in = in, load = load2, out = out2);
+    Register (in = in, load = load3, out = out3);
+    Register (in = in, load = load4, out = out4);
+    Register (in = in, load = load5, out = out5);
+    Register (in = in, load = load6, out = out6);
+    Register (in = in, load = load7, out = out7);
+    Register (in = in, load = load8, out = out8);
+    Mux8Way16 (a = out1, b = out2, c = out3, d = out4, e = out5, f = out6, g = out7, h = out8, sel = address, out = out);
+}

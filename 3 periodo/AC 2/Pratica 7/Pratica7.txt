@@ -1,0 +1,54 @@
+Prática 7
+
+
+Problema 1
+a letra A é representada pelo número 65 na tabela ASCII. Isso significa que,
+um byte em memória com o valor 65 pode tanto representar o número 65 quanto
+a letra A. O significado real desse byte será dado pela forma de uso posterior
+do programa. Se o programa imprime como letra, aparecerá A, se ele for impresso
+como número, aparecerá 65.
+
+Para ler um caracter do teclado, você deve utilizar o código 5 em t0 com
+a instrução addi t0, zero, 5.
+
+Para escrever um caractere na tela, você deve utilizar o código 2 em t0 com
+a instrução addi t0, zero, 2.
+
+Você já sabe que a letra A é representada pelo código ASCII 65.
+Já a letra a (minúscula) é representada pelo número 97.
+Como o alfabeto tem as letras em sequência na tabela ASCII
+(a letra B tem código 66 e a b tem código 98), você pode passar uma letra
+de maiúscula para minúscula apenas somando 32 (=97-65) ao código ASCII da
+letra maiúscula. Se você subtrair 32 de uma letra minúscula,
+você também passa essa letra para maiúscula.
+
+Faça um programa que leia um caractere em letras maiúsculas do teclado,
+guarde num registrador e imprima a versão minúscula dele na tela.
+
+
+Problema 2
+Faça um programa que leia um número do teclado e imprima a letra I se o número
+for ímpar ou a letra P se o número for par. Busque os códigos da letra I e P
+na tabela ASCII para poder imprimir o caractere corretamente.
+
+
+Problema 3
+Faça um programa que leia múltiplos números do teclado. Seu programa deve parar
+quando for digitado o valor 0. Ao final do programa, ele deve imprimir o
+resultado da soma de todos os ímpares subtraindo da soma de todos os pares.
+Resultado = Soma(ímpares) - Soma(pares).
+
+
+Problema 4
+Escreva uma função que retorne a soma de dois números.
+Escreva um programa que leia dois números do teclado, chame a função acima e mostre o somatório na tela.
+
+
+Problema 5
+Faça um programa que leia um número do teclado, calcule o valor da sequencia
+de Fibonacci desse numero e mostre o resultado na tela.
+
+
+Problema 6
+Faça um programa que leia um número do teclado, calcula o fatorial e
+mostre o resultado na tela.

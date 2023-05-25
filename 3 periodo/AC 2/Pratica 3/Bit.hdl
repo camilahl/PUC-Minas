@@ -1,0 +1,18 @@
+// Coloque o seu nome aqui:
+
+/**
+ * registrador de 1 bit:
+ * if load[t] == 1 then out[t+1] = in[t]
+ *                 else out não muda (out[t+1] = out[t])
+ */
+
+CHIP Bit {
+    IN in, load;
+    OUT out;
+
+    PARTS:
+    // Coloque o seu código aqui:
+    DFF (in = t1, out = out);
+    DFF (in = t1, out = out, out = t0);
+    Mux (a = t0, b = in, sel = load, out = t1);
+}

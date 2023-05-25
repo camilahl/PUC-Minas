@@ -1,0 +1,62 @@
+/**
+ * A ULA (Unidade Lógica e Artimética).
+ * Calcula uma das seguintes funções:
+ * x+y, x-y, y-x, 0, 1, -1, x, y, -x, -y, !x, !y,
+ * x+1, y+1, x-1, y-1, x&y, x|y em duas entradas de 16 bits,
+ * de acordo com 6 bits de entrada denotados por zx,nx,zy,ny,f,no.
+ * Além disso, a ULA calcula duas saídas de 1-bit:
+ * se a saída da ULA == 0, zr é setado para 1; caso contrário zr é setado para 0;
+ * se a saída da ULA < 0, ng é setado para 1; caso contrário ng é setado para 0.
+ */
+
+// Implementação: a lógica da ULA manipula as entradas x e y
+// e opera nos valores resultantes, como segue:
+// if (zx == 1) set x = 0        // constante de 16 bits
+// if (nx == 1) set x = !x       // not bit a bit
+// if (zy == 1) set y = 0        // constante de 16 bits
+// if (ny == 1) set y = !y       // not bit a bit
+// if (f == 1)  set out = x + y  // adição inteira em complemento de 2
+// if (f == 0)  set out = x & y  // and bit a bit
+// if (no == 1) set out = !out   // not bit a bit
+// if (out == 0) set zr = 1
+// if (out < 0) set ng = 1
+
+CHIP ALU {
+    IN
+        x[16], y[16],  // entradas de 16 bits
+        zx, // zera a entrada x?
+        nx, // nega a entrada x?
+        zy, // zera a entrada y?
+        ny, // nega a entrada y?
+        f,  // calcula out = x + y (if 1) or x & y (if 0)
+        no; // nega a saída out?
+
+    OUT
+        out[16], // saída de 16 bits
+        zr, // 1 if (out == 0), 0 caso contrário
+        ng; // 1 if (out < 0),  0 caso contrário
+
+    PARTS:
+        // Implemente aqui:
+        // entrada zx
+        Mux16(a = x, b = 0, sel = zx, out = x1);
+
+        // entrada nx
+        Mux16(a = x1, b = Not(in = x1, out = notx1), sel = nx, out = XP);
+
+        // entrada zy
+        Mux16(a = y, b = 0, sel = zy, out = y1);
+
+        // entrada ny
+        Mux16(a = y1, b = Not(in = y1, out = noty1), sel = ny, out = YP);
+
+        // entrada função
+        Mux16(a = Add16(a = XP, b = YP, out =  outAdd16), b = And16(a = XP, b = YP, out = outAnd), sel = f, out = outF);
+
+        // entrada no
+        Mux16(a = outF, b = 0, sel = no, out[0..7] = out1, out[8..15] = out2, out[15] = ng, out = out);
+        Or8Way(in = out1, out = or1);
+        Or8Way(in = out2, out = or2);
+        Or(a = or1, b = or2, out = ourOr);
+        Not(in = outOr, out = zr);
+   }
