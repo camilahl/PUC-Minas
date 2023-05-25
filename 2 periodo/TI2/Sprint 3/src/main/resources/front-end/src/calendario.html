@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+
+    <link rel="stylesheet" href="calendario.css">
+</head>
+
+<body>
+    <div class="bloco">
+        <header>
+            <ul class="header">
+                <li><a class="active" href="calendario.html">Calendário</a></li>
+                <li><a href="barra.html">Barra de Progresso</a></li>
+                <li><a href="lista.html">Lista de Tarefas</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="bloco1">
+        <div id="container">
+            <div id="header">
+                <div id="monthDisplay"></div>
+                <div>
+                    <button id="backButton">Voltar</button>
+                    <button id="nextButton">Próximo</button>
+                </div>
+            </div>
+    
+            <div id="weekdays">
+                <div>Domingo</div>
+                <div>Segunda</div>
+                <div>Terça</div>
+                <div>Quarta</div>
+                <div>Quinta</div>
+                <div>Sexta</div>
+                <div>Sábado</div>
+            </div>
+    
+            <div id="calendar"></div>
+        </div>
+    
+        <div id="newEventModal">
+            <h2>Novo Evento</h2>
+    
+            <input id="eventTitleInput" placeholder="Título do Evento" />
+    
+            <button id="saveButton">Salvar</button>
+            <button id="cancelButton">Cancelar</button>
+        </div>
+    
+        <div id="deleteEventModal">
+            <h2>Evento</h2>
+    
+            <p id="eventText"></p>
+    
+            <button id="deleteButton">Deletar</button>
+            <button id="closeButton">Fechar</button>
+        </div>
+    
+        <div id="modalBackDrop"></div>
+    </div>
+
+    <script src="calendario.js"></script>
+</body>
+
+</html>
