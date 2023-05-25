@@ -1,0 +1,258 @@
+.header{
+    background-color: rgb(181, 218, 250);
+    margin-bottom: 2%;
+}
+.navbar-brand{
+    width: 5%;
+}
+.botao_pesquisa{
+    color: royalblue;
+    border-color: royalblue;
+}
+@media screen and (max-width: 767px){
+    .navbar-brand{
+        width: 40%;
+    }
+    .header{
+        margin-bottom: 0%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .navbar-brand{
+        width: 25%;
+    }
+    .header{
+        margin-bottom: 0%;
+    }
+}
+body{
+    background-color: aliceblue;
+}
+.titulo h1{
+    float: left;
+}
+.carrossel_lancamentos {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgb(181, 218, 250);
+}
+.carrossel{
+    background-color: rgb(181, 218, 250);
+}
+.videos_carrossel{
+    border-color: black;
+    border-radius: 5%;
+    width: 100%;
+    height: 450px;
+    padding: 3%;
+}
+.carousel-inner{
+    height: 50%;
+    padding-bottom: 5%;
+    color: aliceblue;
+}
+.carousel-inner p{
+    padding-top: 1%;
+}
+.imagemCarrossel{
+    border-color: black;
+    border-radius: 10%;
+    width: 80%;
+    padding: 5%;
+    float: right;
+}
+.titulo_titulo{
+    color:rgba(237, 237, 237, 0.847);
+    text-align: center;
+    padding-bottom: 1%;
+}
+.destaque_titulo{
+    color: aliceblue;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+.em_destaque{
+    margin-top: 10%;
+}
+.destaque_botao{
+    float:right;
+}
+.card{
+    color: aliceblue;
+    background-color: rgb(181, 218, 250);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: 1%;
+    max-width: 21%;
+    max-height: 1%;
+}
+.card img{
+    border-radius: 8%;
+}
+
+@media screen and (max-width: 767px){
+    .card{
+        margin:10%;
+        max-width: 70%;
+        max-height: 70%;
+    }
+    .card img{
+        width:100%;
+    }
+}
+.botao_fim_destaque button{
+    float: right;
+    background: black;
+}
+
+footer{
+    color: aliceblue;
+    background-color: rgb(181, 218, 250);
+    padding: 1%;
+    text-align: center;
+}
+.entrevistas{
+    padding: 2%;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    background-color: aliceblue;
+}
+.entrevistas_titulo h1{
+    color: aliceblue;
+    padding-bottom: 1.5%;
+}
+.videos_entrevistas{
+    width: 90%;
+    height: 200px;
+    border-radius: 5%;
+}
+.titulo_entrevistas{
+    margin-top: 5%;
+}
+.texto_entrevistas{
+    padding-bottom: 5%;
+}
+.entrevistas_cards{
+    color: aliceblue;
+}
+@media screen and (max-width: 767px){
+    .entrevistas{
+        margin-top: 25%;
+    }
+    .entrevista_2{
+        display: none;
+    }
+    .entrevista_3{
+        display: none;
+    }
+    .titulo_entrevistas{
+        margin-top: 2%;
+    }
+    .videos_entrevistas{
+        width: 100%;
+        height: 50%;
+        border: none;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .entrevista_3{
+        display: none;
+    }
+}
+.novidades_sobre{
+    background-color: rgb(181, 218, 250);
+    padding-top: 2%;
+}
+.materias{
+    padding: 1%;
+}
+.materia_3{
+    padding: 1%;
+}
+.imagens_novidades{
+    width: 95%;
+    height: 95%;
+    border-radius: 5%;
+}
+.redes i{
+    padding-right: 2%; 
+}
+@media screen and (max-width: 767px){
+    .texto_materia{
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .texto_materia{
+        padding-top: 2%;
+    }
+}
+footer{
+    background-color: aliceblue;
+    padding: 1%;
+    text-align: center;
+}
+
+.btn-primary{
+    background: black;
+}
+.nav-item{
+    color: black;
+}
+.row h1{
+    color: black;
+}
+h2{
+    color: black;
+}
+h5{
+    color: black;
+}
+p{
+    color: black;
+    font-size: 19px;
+}
+a.nav-link{
+    color: black !important;
+}
+#barra{
+    border-radius: 25px;
+    border: none;
+}
+#pesquisar{
+    margin-left: 5px;
+    border-radius: 15px;
+    background-color: rgb(181, 218, 250);
+    color: black;
+}
+#novidades{
+    margin-left: 3%;
+    margin-bottom: 0%;
+}
+.avaliacao{
+    background-color: rgb(181, 218, 250);
+    padding-top: 2%;
+    padding-left: 3%;
+    margin-top: 6%;
+    padding-bottom: 6%;
+}
+.profile-header-container{
+    padding-left: none;
+}
+h6{
+    font-size: 24px;
+    color: black;
+}
+div h6 p{
+    margin-bottom: 0px;
+}
+.botao_fim_avaliacao button{
+    float: right;
+    background: black;
+    margin-top: 2%;
+}
+.avaliacao_botao{
+    float:right;
+}
