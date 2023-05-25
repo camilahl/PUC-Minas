@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>iText FAQ</title>
+    <link rel="stylesheet" type="text/css" href="style-faq.css">
+</head>
+
+<body>
+    <div class="accordion">
+        <h2>Perguntas Frequentes (FAQs)</h2>
+        <div class="contentBox">
+            <div class="label">Quem somos nós?</div>
+            <div class="content">
+                <p>o iText foi criado por um grupo de alunos do 1º período da PUC Minas, unidade Praça da Liberdade,
+                    como um projeto para a aula de TIAW.</p>
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="label">Como funciona?</div>
+            <div class="content">
+                <p>Basta você criar sua conta e sincronizar com o aplicativo de mensagens da sua escolha, e pronto! Você
+                    terá uma ótima maneira de organizar suas mensagens e contatos.</p>
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="label">Como faço para organizar minhas mensagens?</div>
+            <div class="content">
+                <p>O iText oferece variadas maneiras de organização. Entre elas estão: pastas, tags, contatos e
+                    favoritos. Coloque suas mensagens dentro da pasta ou tag desejada, e pronto! Suas mensagens estarão
+                    organizadas. Além disso, você também pode organizá-las por prioridade de contatos, assim como
+                    favoritar as mensagens desejadas.</p>
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="label">É seguro?</div>
+            <div class="content">
+                <p>Sim! Todas suas mensagens permanecem criptografadas e seguras para que não há perigo de serem
+                    vazadas.</p>
+            </div>
+        </div>
+
+        <button class="contact" id="show-modal-btn">Entre em contato</button>
+
+        <div id="overlay">
+            <div id="modal">
+                <button id="close-modal-btn">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </button>
+                <form action="https://formsubmit.co/itextpucg8@gmail.com" method="post">
+                    <h3 class="form-title">Entre Em Contato</h3>
+
+                    <input type="text" placeholder="Nome" id="nome" class="input" autocomplete="off" required>
+                    <input type="email" placeholder="Email" id="email" class="input" autocomplete="off" required>
+                    <input type="text" placeholder="Assunto" id="assunto" class="input" autocomplete="off" required>
+                    <textarea name="message" id="mensagem" placeholder="Mensagem" cols="30" rows="10"
+                        class="input"></textarea>
+                    <button type="submit" id="enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="app-faq.js"></script>
+
+</body>
+
+</html>

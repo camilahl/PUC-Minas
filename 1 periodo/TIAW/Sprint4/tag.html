@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iText</title>
+    <link rel="stylesheet" type="text/css" href="style-pastas.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftSide">
+            <div class="scrollbar">
+                <!-- header -->
+                <div class="header">
+                    <div class="userimg">
+                        <img src="user.jpg" class="cover">
+                    </div>
+                    <ul class="nav_icons">
+                        <li>
+                            <a href="faq.html">
+                                <ion-icon name="help-circle-outline"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <ion-icon name="grid"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <button id="show-modal-btn">
+                                <ion-icon name="add-outline"></ion-icon>
+                            </button>
+                            <div id="overlay">
+                                <div id="modal">
+                                    <button id="close-modal-btn">
+                                        <ion-icon name="close-circle-outline"></ion-icon>
+                                    </button>
+                                    <form id="criarPasta">
+                                        <h2 class="form-title">Criar Nova Tag</h2>
+
+                                        <label class="form-label">Nome:</label>
+                                        <input type="text" class="form-input" placeholder="Nome" id="nome-input"
+                                            autocomplete="off" required="true">
+
+                                        <label class="form-label">Comentário:</label>
+                                        <input type="comment" class="form-input" placeholder="Comentário"
+                                            id="comment-input" autocomplete="off" required="true">
+
+                                        <label class="form-label">Cor:</label>
+                                        <div class="cores-menu">
+                                            <label class="red" for="corRed"></label>
+                                            <input onclick="mudaCor('red')" type="radio" name="cor" id="corRed"
+                                                required="true">
+                                            <label class="amarelo" for="corAmarelo"></label>
+                                            <input onclick="mudaCor('amarelo')" type="radio" name="cor" id="corAmarelo"
+                                                required="true">
+                                            <label class="verde" for="corVerde"></label>
+                                            <input onclick="mudaCor('verde')" type="radio" name="cor" id="corVerde"
+                                                required="true">
+                                            <label class="azul" for="corAzul"></label>
+                                            <input onclick="mudaCor('azul')" type="radio" name="cor" id="corAzul"
+                                                required="true">
+                                            <label class="roxo" for="corRoxo"></label>
+                                            <input onclick="mudaCor('roxo')" type="radio" name="cor" id="corRoxo"
+                                                required="true">
+                                            <label class="plaranja" for="corPlaranja"></label>
+                                            <input onclick="mudaCor('plaranja')" type="radio" name="cor"
+                                                id="corPlaranja" required="true">
+                                            <label class="plime" for="corPlime"></label>
+                                            <input onclick="mudaCor('plime')" type="radio" name="cor" id="corPlime"
+                                                required="true">
+                                            <label class="pverde" for="corPverde"></label>
+                                            <input onclick="mudaCor('pverde')" type="radio" name="cor" id="corPverde"
+                                                required="true">
+                                            <label class="pazul" for="corPazul"></label>
+                                            <input onclick="mudaCor('pazul')" type="radio" name="cor" id="corPazul"
+                                                required="true">
+                                            <label class="proxo" for="corProxo"></label>
+                                            <input onclick="mudaCor('proxo')" type="radio" name="cor" id="corProxo"
+                                                required="true"></label>
+                                        </div>
+
+                                        <button id="criar">Criar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- search -->
+                <div class="search_chat">
+                    <div>
+                        <form id="searchForm">
+                            <input list="opcoes" name="browser" id="opcao" placeholder="Procurar" autocomplete="off">
+
+                            <datalist id="opcoes"></datalist>
+                        </form>
+
+                        <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- chat list -->
+                <div class="chatlist">
+                    <div id="pastas"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- right side -->
+        <div class="rightSide">
+            <div class="scrollbar2">
+                <div class="header">
+                    <div class="imgText">
+                        <ion-icon name="menu-outline" id="menu-toggle"></ion-icon>
+                        <div id="pasta-img"></div>
+                        <h4 id="tituloPasta">Tags</h4>
+                    </div>
+                    <ul class="nav_icons">
+                        <li>
+                            <button id="trash">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </button>
+                        </li>
+                        <li>
+                            <button id="show-modal-btn-cog">
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </button>
+
+                            <div id="overlay-cog">
+                                <div id="modal-cog">
+                                    <button id="close-modal-btn-cog">
+                                        <ion-icon name="close-circle-outline"></ion-icon>
+                                    </button>
+                                    <form id="altera">
+                                        <h2 class="form-title">Alterar Tag</h2>
+
+                                        <label class="form-label">Novo Nome:</label>
+                                        <input type="text" class="form-input" placeholder="Nome" id="nome-input-cog"
+                                            autocomplete="off">
+
+                                        <label class="form-label">Novo Comentário:</label>
+                                        <input type="comment" class="form-input" placeholder="Comentário"
+                                            id="comment-input-cog">
+
+                                        <label class="form-label">Nova Cor:</label>
+
+                                        <div class="cores-menu">
+                                            <label class="red" for="corRed1"></label>
+                                            <input onclick="mudaCor('red')" type="radio" name="corRed1" id="corRed1">
+                                            <label class="amarelo" for="corAmarelo1"></label>
+                                            <input onclick="mudaCor('amarelo')" type="radio" name="cor"
+                                                id="corAmarelo1">
+                                            <label class="verde" for="corVerde1"></label>
+                                            <input onclick="mudaCor('verde')" type="radio" name="cor" id="corVerde1">
+                                            <label class="azul" for="corAzul1"></label>
+                                            <input onclick="mudaCor('azul')" type="radio" name="cor" id="corAzul1">
+                                            <label class="roxo" for="corRoxo1"></label>
+                                            <input onclick="mudaCor('roxo')" type="radio" name="cor" id="corRoxo1">
+                                            <label class="plaranja" for="corPlaranja1"></label>
+                                            <input onclick="mudaCor('plaranja')" type="radio" name="cor"
+                                                id="corPlaranja1">
+                                            <label class="plime" for="corPlime1"></label>
+                                            <input onclick="mudaCor('plime')" type="radio" name="cor" id="corPlime1">
+                                            <label class="pverde" for="corPverde1"></label>
+                                            <input onclick="mudaCor('pverde')" type="radio" name="cor" id="corPverde1">
+                                            <label class="pazul" for="corPazul1"></label>
+                                            <input onclick="mudaCor('pazul')" type="radio" name="cor" id="corPazul1">
+                                            <label class="proxo" for="corProxo1"></label>
+                                            <input onclick="mudaCor('proxo')" type="radio" name="cor" id="corProxo1">
+                                        </div>
+
+                                        <button id="alterar">Alterar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- mensagens -->
+                <div class="mensagens">
+                    <h3>Nenhuma pasta selecionada</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/f1167e16f5.js" crossorigin="anonymous"></script>
+    <script src="pasta-tag.js"></script>
+    <script src="index-tag.js"></script>
+</body>
+
+</html>
